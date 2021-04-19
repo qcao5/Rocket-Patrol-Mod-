@@ -2,7 +2,7 @@ let config = {
     type: Phaser.AUTO,
     width: 640,
     height: 480,
-    scene: [ Menu, Play1, Play2 ],
+    scene: [ Menu, Play1, Play2 ]
 };
 
 let game = new Phaser.Game(config);

@@ -1,13 +1,16 @@
-class Menu extends Phaser.Scene{
+class Play1 extends Phaser.Scene{
     constructor(){
         super("menuScene");
     }
 
     preload(){
-        //load Audio
-        this.load.audio('sfx_select', './assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', './assets/explosion38.wav');
-        this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        //load spritesheet
+        this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+
+        //load images/title sprites
+        this.load.image('rocket', './assets/rocket.png');
+        this.load.image('spaceship', './assets/spaceship.png');
+        this.load.image('starfield', './assets/starfield.png');
     }
 
     create(){
@@ -32,7 +35,7 @@ class Menu extends Phaser.Scene{
         this.add.text(centerX, centerY-textSpacer*1.5, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY+textSpacer*1.5, 'Move Mouse to move & Click Mouse to Fire', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY+textSpacer*2, 'Use <- -> & A/D to move Rocket For 2-Player Mod', menuConfig).setOrigin(0.5);
-        this.add.text(centerX, centerY+textSpacer*2.5, '(↑) & (W) to Fire For 2-Player Mod', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY+textSpacer*2.5, '(F) & (W) to Fire For 2-Player Mod', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
         this.add.text(centerX, centerY+textSpacer, 'Press <- for Single or -> for Double', menuConfig).setOrigin(0.5);
