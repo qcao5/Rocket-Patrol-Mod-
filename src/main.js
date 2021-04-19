@@ -7,6 +7,7 @@
 //Implement an alternating two-player mode (20)
 //Replace the UI borders with new artwork (10)
 //Create a new title screen (e.g., new artwork, typography, layout) (10)
+//Implement mouse control for player movement and mouse click to fire (20) (PS: but I cannot find my mouse because Move horizontally only.)
 
 //TA Ishaan helped me a lot. Thank you so much.
 
