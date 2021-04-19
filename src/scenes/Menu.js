@@ -1,16 +1,14 @@
-class Play1 extends Phaser.Scene{
+class Menu extends Phaser.Scene{
     constructor(){
         super("menuScene");
     }
 
     preload(){
-        //load spritesheet
-        this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
-
-        //load images/title sprites
-        this.load.image('rocket', './assets/rocket.png');
-        this.load.image('spaceship', './assets/spaceship.png');
-        this.load.image('starfield', './assets/starfield.png');
+       //load Audio
+       this.load.audio('sfx_select', './assets/blip_select12.wav');
+       this.load.audio('sfx_explosion', './assets/explosion38.wav');
+       this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+   
     }
 
     create(){
@@ -21,8 +19,8 @@ class Play1 extends Phaser.Scene{
             color: '#843605',
             align: 'right',
             padding: {
-                top: 5,
-                bottom: 5,
+                top: 8,
+                bottom: 8,
             },
             fixedWidth: 0
         }
@@ -33,12 +31,13 @@ class Play1 extends Phaser.Scene{
         let textSpacer = 64;
 
         this.add.text(centerX, centerY-textSpacer*1.5, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
-        this.add.text(centerX, centerY+textSpacer*1.5, 'Move Mouse to move & Click Mouse to Fire', menuConfig).setOrigin(0.5);
-        this.add.text(centerX, centerY+textSpacer*2, 'Use <- -> & A/D to move Rocket For 2-Player Mod', menuConfig).setOrigin(0.5);
-        this.add.text(centerX, centerY+textSpacer*2.5, '(F) & (W) to Fire For 2-Player Mod', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY+textSpacer*1.5, 'USE MOUSE TO MOVE AND FIRE', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY+textSpacer*2, '2 Player Mod', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY+textSpacer*2.5, 'Use [⬅/➡] & [A / D] TO MOVE', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY+textSpacer*3, '[F] & [W] TO FIRE', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
-        this.add.text(centerX, centerY+textSpacer, 'Press <- for Single or -> for Double', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY+textSpacer, 'Press ⬅ for Single or ➡ for Double', menuConfig).setOrigin(0.5);
         
         this.add.text(20, 20, "Roecket Patrol Menu");
 
@@ -64,13 +63,13 @@ class Play1 extends Phaser.Scene{
         //hard mode
         if(Phaser.Input.Keyboard.JustDown(keyRIGHT)){
             game.settings = {
-                spaceshipSpeed: 3,
-                bonusSpeed: 5.5,
-                gameTimer: 60000
+                spaceshipSpeed: 5,
+                bonusSpeed: 8,
+                gameTimer: 45000
             }
             this.sound.play('sfx_select');
             this.scene.start("play2Scene");
         }
+    
     }
-
 }

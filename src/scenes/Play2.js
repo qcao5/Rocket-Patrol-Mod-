@@ -57,8 +57,8 @@ class Play2 extends Phaser.Scene{
             color: '#843605',
             align: 'right',
             padding: {
-                top: 5,
-                bottom: 5,
+                top: 8,
+                bottom: 8,
             },
             fixedWidth: 100
         }
