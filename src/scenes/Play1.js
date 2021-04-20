@@ -17,13 +17,13 @@ class Play1 extends Phaser.Scene{
         //place tile sprite
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
 
-        //white rectangle borders
-        this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(5, 443, 630, 32, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(5, 5, 32, 455, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(603, 5, 32, 455, 0xFFFFFF).setOrigin(0, 0);
-        //green UI background
-        this.add.rectangle(37, 42, 566, 64, 0x00FF00).setOrigin(0, 0);
+        //black rectangle borders
+        this.add.rectangle(5, 5, 630, 32,  0x000000).setOrigin(0, 0);
+        this.add.rectangle(5, 443, 630, 32,  0x000000).setOrigin(0, 0);
+        this.add.rectangle(5, 5, 32, 455,  0x000000).setOrigin(0, 0);
+        this.add.rectangle(603, 5, 32, 455,  0x000000).setOrigin(0, 0);
+        //yellow UI background
+        this.add.rectangle(38, 20, 566, 64, 0xFFFF00).setOrigin(0, 0);
 
         //add rocket (p1)
         this.p1Rocket = new Rocket1(this, game.config.width/2, 431, 'rocket').setScale(0.5, 0.5).setOrigin(0, 0);
@@ -78,7 +78,7 @@ class Play1 extends Phaser.Scene{
             },
             fixedWidth: 100
         }
-        this.scoreLeft = this.add.text(69, 54, this.p1Score, scoreConfig);
+        this.scoreLeft = this.add.text(70, 32, this.p1Score, scoreConfig);
 
         //Game flag 
         this.gameOver = false;
