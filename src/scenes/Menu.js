@@ -15,8 +15,8 @@ class Menu extends Phaser.Scene{
         let menuConfig = {
             fontFamily: 'Courier',
             fontSize: '20px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            backgroundColor: '#00FFFF',
+            color: '#FF00FF',
             align: 'right',
             padding: {
                 top: 8,
@@ -30,14 +30,15 @@ class Menu extends Phaser.Scene{
         let centerY = game.config.height/2;
         let textSpacer = 64;
 
+        this.add.text(centerX, centerY+textSpacer, 'Press ⬅ for Single or ➡ for Double', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY-textSpacer*1.5, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY+textSpacer*1.5, 'USE MOUSE TO MOVE AND FIRE', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY+textSpacer*2, '2 Player Mod', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY+textSpacer*2.5, 'Use [⬅/➡] & [A / D] TO MOVE', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY+textSpacer*3, '[F] & [W] TO FIRE', menuConfig).setOrigin(0.5);
-        menuConfig.backgroundColor = '#00FF00';
-        menuConfig.color = '#000';
-        this.add.text(centerX, centerY+textSpacer, 'Press ⬅ for Single or ➡ for Double', menuConfig).setOrigin(0.5);
+        menuConfig.backgroundColor = '#FF00FF';
+        menuConfig.color = '#00FFFF';
+        this.add.text(centerX, centerY-textSpacer*1.5, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
         
         this.add.text(20, 20, "Roecket Patrol Menu");
 
