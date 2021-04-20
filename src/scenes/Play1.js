@@ -11,11 +11,15 @@ class Play1 extends Phaser.Scene{
         this.load.image('rocket', './assets/rocket.png');
         this.load.image('spaceship', './assets/spaceship.png');
         this.load.image('starfield', './assets/starfield.png');
+        this.load.audio('bgm', './assets/pixspacemusic.m4a');
+    
     }
 
     create(){
         //place tile sprite
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
+        this.bgmPlayed = false;
+        this.bgmCreated = false;
 
         //black rectangle borders
         this.add.rectangle(5, 5, 630, 32,  0x000000).setOrigin(0, 0);
@@ -60,6 +64,26 @@ class Play1 extends Phaser.Scene{
                 this.input.mouse.releasePointerLock();
             }
         }, this);
+
+        if (this.bgmPlayed == false) {
+            if (this.bgmCreated) {
+                this.bgm.resume();
+                return;
+            }
+            this.bgm = this.sound.add('bgm', {
+                mute: false,
+                volume: 0.7,
+                rate: 1,
+                loop: true,
+                delay: 0
+            });
+            this.bgmCreated = true;
+            this.bgm.play();
+        } else {
+            // Resume bgm if bgm exists
+            this.bgm.resume();
+        }
+    
 
 
 
