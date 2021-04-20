@@ -58,7 +58,7 @@ class Play1 extends Phaser.Scene{
             }
         }, this);
 
-        //unlock the mouse
+        //music player
         this.input.keyboard.on('keydown_Q', function(event){
             if(this.input.mouse.locked){
                 this.input.mouse.releasePointerLock();
